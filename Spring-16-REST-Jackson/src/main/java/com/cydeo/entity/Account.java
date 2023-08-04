@@ -15,7 +15,7 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @Table(name = "account_details")
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer"},ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"state","postalCode"},ignoreUnknown = true)
 public class Account extends BaseEntity {
 
     private String name;
@@ -32,7 +32,7 @@ public class Account extends BaseEntity {
     private UserRole role = UserRole.USER;
 
     @OneToOne(mappedBy = "account")
-    @JsonBackReference //is the back part of reference - it will be omitted from serialization
+    @JsonBackReference // Is the back part of reference - it will be omitted from serialization
     private User user;
 
 }

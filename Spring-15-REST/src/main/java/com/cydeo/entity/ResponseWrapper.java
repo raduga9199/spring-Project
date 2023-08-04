@@ -11,12 +11,14 @@ import org.springframework.http.HttpStatus;
 @NoArgsConstructor
 public class ResponseWrapper {
 
-    private boolean success;
+
     private String message;
     private Integer code;
     private Object data;
+    private boolean success;
 
-    public ResponseWrapper(String message, Object data) {
+
+    public ResponseWrapper( String message, Object data) {
         this.success = true;
         this.message = message;
         this.code = HttpStatus.OK.value();
@@ -28,4 +30,6 @@ public class ResponseWrapper {
         this.code = HttpStatus.OK.value();
         this.success = true;
     }
+
+
 }
