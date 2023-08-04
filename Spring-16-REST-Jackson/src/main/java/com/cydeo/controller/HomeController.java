@@ -25,7 +25,7 @@ public class HomeController {
         return userRepository.findAll();
     }
 
-    @GetMapping("/accounts")
+    @GetMapping("accounts")
     public List<Account> readAllAccounts(){
         return accountRepository.findAll();
     }
